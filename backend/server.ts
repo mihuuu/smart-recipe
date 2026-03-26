@@ -14,7 +14,10 @@ connectDB();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const allowedOrigins = ["http://localhost:5173", "https://cs571-f25.github.io"];
+const allowedOrigins = [
+      "http://localhost:5173",
+      ...(process.env.ALLOWED_ORIGINS
+      ? process.env.ALLOWED_ORIGINS.split(",").map((o) => o.trim()) : [])];
 
 app.use(
   cors({
