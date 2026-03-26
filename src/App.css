@@ -172,6 +172,7 @@ body {
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(92, 64, 51, 0.1);
   border: 1px solid rgba(255, 107, 53, 0.1);
+  overflow: visible;
 }
 
 /* Section Headings */
@@ -371,4 +372,36 @@ body {
 .search-bar-input:focus {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 0.2rem rgba(255, 107, 53, 0.15);
+}
+
+.ingredient-picker-list {
+  text-transform: capitalize;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  max-height: 220px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.badge-ingredient {
+  text-transform: capitalize;
+  background: var(--color-primary);
+  color: white;
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }

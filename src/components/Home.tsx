@@ -8,7 +8,7 @@ import type { Recipe } from "../types";
 type Step = "ingredients" | "recipes";
 
 export default function Home() {
-  const [ingredients, setIngredients] = useState("");
+  const [ingredients, setIngredients] = useState<string[]>([]);
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -17,8 +17,8 @@ export default function Home() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!ingredients.trim()) {
-      setError("Please enter at least one ingredient");
+    if (ingredients.length === 0) {
+      setError("Please select at least one ingredient");
       return;
     }
 
@@ -32,7 +32,7 @@ export default function Home() {
 
     try {
       const { recipeAPI } = await import("../services/api");
-      const generatedRecipes = await recipeAPI.generateRecipes(ingredients);
+      const generatedRecipes = await recipeAPI.generateRecipes(ingredients.join(", "));
 
       setRecipes(generatedRecipes);
       setCurrentStep("recipes");
@@ -47,7 +47,7 @@ export default function Home() {
   const handleBackToIngredients = () => {
     setCurrentStep("ingredients");
     setRecipes([]);
-    setIngredients("");
+    setIngredients([]);
   };
 
   return (
