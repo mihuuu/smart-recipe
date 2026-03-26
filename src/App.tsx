@@ -1,5 +1,5 @@
 import "./App.css";
-import { HashRouter, Routes, Route, Navigate } from "react-router";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router";
 import Navigation from "./components/Navigation";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -35,7 +35,7 @@ function ProtectedRoute({ children }: ProtectedRouteProps) {
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <div className="app-container">
         <Navigation />
         <div className="app-content">
