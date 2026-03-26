@@ -2,12 +2,13 @@
   "name": "recipe-app-backend",
   "version": "1.0.0",
   "description": "Backend API for Recipe Generator App",
-  "main": "server.js",
+  "main": "server.ts",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
-    "seed": "node scripts/seed.js"
+    "start": "tsx server.ts",
+    "dev": "tsx watch server.ts",
+    "build": "tsc --noEmit",
+    "seed": "tsx scripts/seed.ts"
   },
   "keywords": [
     "recipe",
@@ -28,6 +29,13 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
-    "nodemon": "^3.0.2"
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^25.5.0",
+    "nodemon": "^3.0.2",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
   }
 }
