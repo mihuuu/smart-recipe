@@ -5,9 +5,9 @@
   "main": "server.ts",
   "type": "module",
   "scripts": {
-    "start": "node dist/server.js",
+    "start": "tsx server.ts",
     "dev": "tsx watch server.ts",
-    "build": "tsc",
+    "build": "tsc --noEmit",
     "seed": "tsx scripts/seed.ts"
   },
   "keywords": [
@@ -26,6 +26,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.0.3",
     "openai": "^4.20.1",
+    "tsx": "^4.21.0",
     "zod": "^3.25.76"
   },
   "devDependencies": {
@@ -35,7 +36,6 @@
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^25.5.0",
     "nodemon": "^3.0.2",
-    "tsx": "^4.21.0",
     "typescript": "^6.0.2"
   }
 }
